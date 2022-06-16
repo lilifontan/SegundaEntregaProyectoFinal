@@ -3,13 +3,10 @@
 const productos = [prod1, prod2, prod3, prod4]
 let carrito = []
 
-
 //QUERY DE ELEMENTOS-------------------------------------------------------------------------------------------------------
 const verCarrito = document.querySelector('.verCarrito')
 const botonDestacados = document.querySelector('.buttonCTA') 
 const botonCarrito = document.querySelector('.buttonCarrito') 
-
-
 
 //FUNCIONES----------------------------------------------------------------------------------------------------------------
 //Función que renderiza mis productos en pantalla
@@ -55,23 +52,20 @@ botonesDelete.forEach((botonDelete) => {
 })
 }
 
-
 //Función que agrega productos al carrito
 function agregarProducto(e) {
-
     const productoElegido = e.target.getAttribute('data-id')
     const producto = productos.find((producto) => producto.id == productoElegido)
     carrito.push(producto)
+    localStorage.setItem('carrito',JSON.stringify(carrito))
 
 }
 
 const eliminarProducto = (e) => {
-
     const productoElegido = e.target.getAttribute('data-id')
     //const producto = productos.find((producto) => producto.id ==  productoElegido)
     carrito = carrito.filter((producto) => producto.id !=productoElegido)
     renderizarCarrito()
-    
 }
 
 //EVENTLISTENERS-------------------------------------------------------------------------------------------------------------
