@@ -55,6 +55,17 @@
         "sectionText sectionText sectionText sectionText"
         "pie pie pie pie";
     }
+    .contenedor-carrito {
+      display: grid;
+      @include backgrounds($color4);
+      grid-template-columns: repeat (4, 1fr);
+      grid-template-rows: (5, 1fr);
+      grid-template-areas:
+        "header header header header"
+        "destacados destacados destacados destacados"
+        "lolo lolo lolo lolo"
+        "pie pie pie pie";
+    }
 
   /*clase agregada para armado de grid Form de Contacto*/
   .contenedor-form {

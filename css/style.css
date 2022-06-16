@@ -81,6 +81,13 @@ ul li a:hover {
   grid-template-rows: 5, 1fr;
   grid-template-areas: "header header header header" "destacados destacados destacados destacados" "imagen imagen imagen imagen" "sectionText sectionText sectionText sectionText" "pie pie pie pie"; }
 
+.contenedor-carrito {
+  display: grid;
+  background-color: #e0d2d4;
+  grid-template-columns: repeat 4, 1fr;
+  grid-template-rows: 5, 1fr;
+  grid-template-areas: "header header header header" "destacados destacados destacados destacados" "lolo lolo lolo lolo" "pie pie pie pie"; }
+
 /*clase agregada para armado de grid Form de Contacto*/
 .contenedor-form {
   display: grid;
@@ -238,6 +245,13 @@ form {
     grid-template-rows: 5, 1fr;
     grid-template-areas: "header header" "destacados destacados" "formulario formulario" "sectionForm sectionForm" "pie pie"; } }
 
+.contenedor-carrito {
+  display: grid;
+  background-color: #e0d2d4;
+  grid-template-columns: repeat 4, 1fr;
+  grid-template-rows: 5, 1fr;
+  grid-template-areas: "header header " "destacados destacados" "lolo lolo" "pie pie"; }
+
 @media screen and (max-width: 414px) {
   .contenedor {
     grid-template-columns: repeat 1fr;
@@ -255,6 +269,12 @@ form {
     grid-template-columns: repeat 1fr;
     grid-template-rows: 5, 1fr;
     grid-template-areas: "header " "destacados" "formulario" "sectionForm" "pie"; }
+  .contenedor-carrito {
+    display: grid;
+    background-color: #e0d2d4;
+    grid-template-columns: repeat 4, 1fr;
+    grid-template-rows: 5, 1fr;
+    grid-template-areas: "header" "destacados" "lolo" "pie"; }
   header {
     background-color: black;
     grid-area: header;
