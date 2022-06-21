@@ -4,7 +4,7 @@ const productos = [prod1, prod2, prod3, prod4]
 let carrito = []
 
 //QUERY DE ELEMENTOS-------------------------------------------------------------------------------------------------------
-const verCarrito = document.querySelector('.verCarrito')
+let verCarrito = document.querySelector('.verCarrito')
 const botonDestacados = document.querySelector('.buttonCTA') 
 const botonCarrito = document.querySelector('.buttonCarrito') 
 
@@ -31,7 +31,7 @@ botonCompra.addEventListener('click', agregarProducto)
 })
 }
 
-renderizarCarrito = (e) => {
+    renderizarCarrito = (e) => {
   
     ID_cartContainer.innerHTML= ''
     carrito.forEach((producto) => {
@@ -50,6 +50,7 @@ botonesDelete.forEach((botonDelete) => {
     botonDelete.addEventListener('click', eliminarProducto)
  
 })
+//window.location.href = "../pages/carrito.html"
 }
 
 //Función que agrega productos al carrito
@@ -58,18 +59,24 @@ function agregarProducto(e) {
     const producto = productos.find((producto) => producto.id == productoElegido)
     carrito.push(producto)
     localStorage.setItem('carrito',JSON.stringify(carrito))
-
-}
-
-const eliminarProducto = (e) => {
-    const productoElegido = e.target.getAttribute('data-id')
-    //const producto = productos.find((producto) => producto.id ==  productoElegido)
-    carrito = carrito.filter((producto) => producto.id !=productoElegido)
+    verCarrito.hidden= false
     renderizarCarrito()
 }
 
-//EVENTLISTENERS-------------------------------------------------------------------------------------------------------------
+const eliminarProducto = (e) => {
+    const productoBorrado = e.target.getAttribute('data-id')
+    carrito = carrito.filter((producto) => producto.id !=productoBorrado)
+    renderizarCarrito()
+    console.log (carrito)
+    //localStorage.removeItem('carrito',JSON.stringify(carrito))    
+    if (carrito.length == 0) {
+        verCarrito.hidden= true
+       // document.getElementById('verCarrito').hidden= true
+    } else  console.log ("no se va a eliminar ")
+}
 
+//EVENTLISTENERS-------------------------------------------------------------------------------------------------------------
+verCarrito.hidden=true
 botonDestacados.addEventListener('click', renderizarProducto)
 botonCarrito.addEventListener('click', renderizarCarrito)
 
