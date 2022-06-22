@@ -14,13 +14,14 @@ renderizarProducto = (e) => {
   
     e.target.setAttribute('hidden', true)
     productos.forEach((producto) => {
+    const {id, nombre, imgSrc, precio} = producto
     const card = document.createElement('div')
     card.className = 'card'
     card.innerHTML = `
-    <div class="cartImg scale"> <img src="${producto.imgSrc}" /> </div>
-    <div class="cartTitle"><h2>${producto.nombre}</h2></div>
-    <div class="cartPrice"><h2>${producto.precio}</h2></div>
-    <button data-id="${producto.id}" class="buttonProd"> Agregar al Carrito </button>
+    <div class="cartImg scale"> <img src="${imgSrc}" /> </div>
+    <div class="cartTitle"><h2>${nombre}</h2></div>
+    <div class="cartPrice"><h2>${precio}</h2></div>
+    <button data-id="${id}" class="buttonProd"> Agregar al Carrito </button>
         `
     ID_cardContainer.append(card)
 })
@@ -35,13 +36,14 @@ botonCompra.addEventListener('click', agregarProducto)
   
     ID_cartContainer.innerHTML= ''
     carrito.forEach((producto) => {
+    const {id, nombre, imgSrc, precio} = producto    
     const card = document.createElement('div')
     card.className = 'card'
     card.innerHTML = `
-    <div class="cartImg scale"> <img src="${producto.imgSrc}" /> </div>
-    <div class="cartTitle"><h2>${producto.nombre}</h2></div>
-    <div class="cartPrice"><h2>${producto.precio}</h2></div>
-    <button data-id="${producto.id}" class="buttonDelete"> Eliminar del Carrito </button>
+    <div class="cartImg scale"> <img src="${imgSrc}" /> </div>
+    <div class="cartTitle"><h2>${nombre}</h2></div>
+    <div class="cartPrice"><h2>${precio}</h2></div>
+    <button data-id="${id}" class="buttonDelete"> Eliminar del Carrito </button>
         `
     ID_cartContainer.append(card)
 })
@@ -67,11 +69,9 @@ const eliminarProducto = (e) => {
     const productoBorrado = e.target.getAttribute('data-id')
     carrito = carrito.filter((producto) => producto.id !=productoBorrado)
     renderizarCarrito()
-    console.log (carrito)
     //localStorage.removeItem('carrito',JSON.stringify(carrito))    
     if (carrito.length == 0) {
         verCarrito.hidden= true
-       // document.getElementById('verCarrito').hidden= true
     } else  console.log ("no se va a eliminar ")
 }
 
