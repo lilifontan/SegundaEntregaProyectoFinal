@@ -33,7 +33,6 @@ botonCompra.addEventListener('click', agregarProducto)
 }
 
     renderizarCarrito = (e) => {
-  
     ID_cartContainer.innerHTML= ''
     carrito.forEach((producto) => {
     const {id, nombre, imgSrc, precio} = producto    
@@ -72,7 +71,7 @@ const eliminarProducto = (e) => {
     //localStorage.removeItem('carrito',JSON.stringify(carrito))    
     if (carrito.length == 0) {
         verCarrito.hidden= true
-    } else  console.log ("no se va a eliminar ")
+    } 
 }
 
 //EVENTLISTENERS-------------------------------------------------------------------------------------------------------------
