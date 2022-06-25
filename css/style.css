@@ -134,8 +134,8 @@ form {
 .buttonCTA, .buttonProd, .buttonDelete, .buttonReserva {
   background-color: #e0dbdb;
   color: #302d2d;
-  margin-bottom: 3%;
-  margin-top: 10%;
+  margin-bottom: 1%;
+  margin-top: 5%;
   font-size: 22px;
   font-weight: 500;
   padding-right: 5%;
@@ -386,8 +386,8 @@ h2 {
 .buttonCTA, .buttonProd, .buttonDelete, .buttonReserva {
   background-color: #e0dbdb;
   color: #302d2d;
-  margin-bottom: 3%;
-  margin-top: 10%;
+  margin-bottom: 1%;
+  margin-top: 5%;
   font-size: 22px;
   font-weight: 500;
   padding-right: 5%;
