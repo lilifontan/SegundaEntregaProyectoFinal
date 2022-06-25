@@ -10,9 +10,9 @@ const botonCarrito = document.querySelector('.buttonCarrito')
 
 //FUNCIONES----------------------------------------------------------------------------------------------------------------
 //Función que renderiza mis productos en pantalla
-renderizarProducto = (e) => {
+renderizarProducto = () => {
   
-    e.target.setAttribute('hidden', true)
+ //   e.target.setAttribute('hidden', true)
     productos.forEach((producto) => {
     const {id, nombre, imgSrc, precio} = producto
     const card = document.createElement('div')
@@ -77,7 +77,8 @@ const eliminarProducto = (e) => {
 
 //EVENTLISTENERS-------------------------------------------------------------------------------------------------------------
 verCarrito.hidden=true
-botonDestacados.addEventListener('click', renderizarProducto)
+//botonDestacados.addEventListener('click', renderizarProducto)
+renderizarProducto()
 botonCarrito.addEventListener('click', renderizarCarrito)
 
 if (localStorage.getItem('carrito')){
