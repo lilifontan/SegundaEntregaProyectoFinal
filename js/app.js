@@ -67,6 +67,7 @@ function agregarProducto(e) {
 const eliminarProducto = (e) => {
     const productoBorrado = e.target.getAttribute('data-id')
     carrito = carrito.filter((producto) => producto.id !=productoBorrado)
+    localStorage.setItem('carrito',JSON.stringify(carrito))
     renderizarCarrito()
     //localStorage.removeItem('carrito',JSON.stringify(carrito))    
     if (carrito.length == 0) {
@@ -79,4 +80,7 @@ verCarrito.hidden=true
 botonDestacados.addEventListener('click', renderizarProducto)
 botonCarrito.addEventListener('click', renderizarCarrito)
 
-
+if (localStorage.getItem('carrito')){
+    carrito = JSON.parse(localStorage.getItem('carrito'))
+    renderizarCarrito()
+}
