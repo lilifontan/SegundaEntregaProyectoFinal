@@ -1,13 +1,8 @@
 
-//FETCH GET RELATIVO
-fetch('./json/data.json')
-    .then ((res) =>res.json())
-    .then((data) =>console.log(data))
-
 
 
 //DECLARACIONES------------------------------------------------------------------------------------------------------------
-const productos = [prod1, prod2, prod3, prod4]
+let  productos = []
 let carrito = []
 
 //QUERY DE ELEMENTOS-------------------------------------------------------------------------------------------------------
@@ -19,7 +14,7 @@ const botonCarrito = document.querySelector('.buttonCarrito')
 //Función que renderiza mis productos en pantalla
 renderizarProducto = () => {
   
- //   e.target.setAttribute('hidden', true)
+    console.log(productos)
     productos.forEach((producto) => {
     const {id, nombre, imgSrc, precio} = producto
     const card = document.createElement('div')
@@ -84,8 +79,18 @@ const eliminarProducto = (e) => {
 
 //EVENTLISTENERS-------------------------------------------------------------------------------------------------------------
 verCarrito.hidden=true
-//botonDestacados.addEventListener('click', renderizarProducto)
-renderizarProducto()
+
+
+//FETCH GET RELATIVO
+fetch('./json/data.json')
+    .then ((res) =>res.json())
+    .then((data) =>{
+        productos=data
+        renderizarProducto(productos)
+    }
+    )
+
+
 botonCarrito.addEventListener('click', renderizarCarrito)
 
 if (localStorage.getItem('carrito')){
