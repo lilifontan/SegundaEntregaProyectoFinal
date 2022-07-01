@@ -1,0 +1,8 @@
+
+
+[
+{"código": "001", "nombre": "Ethereal", "ruta": "./Imagenes/Ring_resized.jpg", "precio": 12500},
+{"código": "002", "nombre": "Avar", "ruta": "./Imagenes/Earrings_resized.jpeg", "precio": 15900},
+{"código": "003", "nombre": "Cyon", "ruta": "./Imagenes/Necklace_resized.jpeg", "precio": 16500},
+{"código": "004", "nombre": "Balter", "ruta": "./Imagenes/Ring_resized.jpg", "precio": 24500}
+]

@@ -1,4 +1,11 @@
 
+//FETCH GET RELATIVO
+fetch('./json/data.json')
+    .then ((res) =>res.json())
+    .then((data) =>console.log(data))
+
+
+
 //DECLARACIONES------------------------------------------------------------------------------------------------------------
 const productos = [prod1, prod2, prod3, prod4]
 let carrito = []
